@@ -1,0 +1,7 @@
+name: Particles
+main: tk.complexicon.particles.Main
+version: 0.1
+commands:
+   particle:
+      description: Opens Particle GUI.
+      usage: /<command>
