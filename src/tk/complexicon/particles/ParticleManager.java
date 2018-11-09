@@ -3,6 +3,7 @@ package tk.complexicon.particles;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.potion.PotionType;
 import tk.complexicon.particles.utils.CItemStack;
 import tk.complexicon.particles.utils.CPotion;
@@ -73,7 +74,7 @@ public class ParticleManager {
         Particle p = new Particle();
 
         p.permission = "particle.heart";
-        p.displayItem = new CPotion().setType(PotionType.INSTANT_HEAL).addLore(new String[]{}).setName("&4Herz").build();
+        p.displayItem = new CPotion().setType(PotionType.INSTANT_HEAL).hideFlag(ItemFlag.HIDE_POTION_EFFECTS).setName("&4Herz").build();
         p.effect = Effect.HEART;
 
         addParticle(p);
@@ -134,7 +135,7 @@ public class ParticleManager {
         Particle p = new Particle();
 
         p.permission = "particle.rainbow";
-        p.displayItem = new CItemStack(Material.EXP_BOTTLE).setName("&bRain&dbow").build();
+        p.displayItem = new CItemStack(Material.EXP_BOTTLE).setName(Main.rainbowString("Rainbow")).build();
         p.effect = Effect.COLOURED_DUST;
         p.y = 0.2F;
         p.x = 0.2F;
@@ -232,7 +233,7 @@ public class ParticleManager {
         Particle p = new Particle();
 
         p.permission = "particle.bluecrit";
-        p.displayItem = new CItemStack(Material.POTION).setName("&1Magie Crit").build();
+        p.displayItem = new CPotion().setType(PotionType.NIGHT_VISION).hideFlag(ItemFlag.HIDE_POTION_EFFECTS).setName("&1Magie Crit").build();
         p.effect = Effect.MAGIC_CRIT;
         p.x = 0.4F;
         p.y = 0.4F;

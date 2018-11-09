@@ -3,6 +3,7 @@ package tk.complexicon.particles.utils;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -66,6 +67,11 @@ public class CItemStack {
 
     public CItemStack setAmt(int amt){
         i.setAmount(amt);
+        return this;
+    }
+
+    public CItemStack hideFlag(ItemFlag i){
+        meta.addItemFlags(i);
         return this;
     }
 

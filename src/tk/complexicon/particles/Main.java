@@ -9,6 +9,7 @@ import tk.complexicon.particles.listeners.MoveListener;
 import tk.complexicon.particles.utils.Particle;
 
 import java.util.HashMap;
+import java.util.Random;
 import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
@@ -35,4 +36,20 @@ public class Main extends JavaPlugin {
         l.info("Ready! Particles v0.1 by Complexicon");
 
     }
+
+    public static String rainbowString(String in){
+        char[] chars = new char[]{'c', '6', 'e', 'a', 'b', '3', 'd'};
+        Random r = new Random();
+        int index = r.nextInt(chars.length);
+        String returnValue = "";
+        for (char c : in.toCharArray()){
+            returnValue += "§" + chars[index] + c;
+            index++;
+            if (index == chars.length){
+                index = 0;
+            }
+        }
+        return returnValue;
+    }
+
 }
