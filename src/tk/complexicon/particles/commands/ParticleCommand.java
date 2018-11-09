@@ -54,7 +54,11 @@ public class ParticleCommand implements CommandExecutor {
                 p.openInventory(dummy);
                 p.playSound(p.getLocation(), Sound.CHEST_OPEN, 1, 2);
 
+            }else{
+                p.sendMessage("§cDu besitzt keine Berechtigung dafür!");
             }
+        }else{
+            commandSender.sendMessage("§cNur Spieler dürfen dies!");
         }
         return true;
     }
